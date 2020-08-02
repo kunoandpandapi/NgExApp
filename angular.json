@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-ex-app"
+    }
+  },
+  "defaultProject": "ng-ex-app",
+  "cli": {
+    "analytics": false
+  }
 }
