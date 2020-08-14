@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { products } from '../../../assets/products';
+import { ProductService } from 'src/app/shared/product.service';
 
 @Component({
   selector: 'app-product-listings',
@@ -7,13 +7,18 @@ import { products } from '../../../assets/products';
   styleUrls: ['./product-listings.component.scss']
 })
 export class ProductListingsComponent implements OnInit {
-  products = products;
-  //productId: number = 1;
-  //products: any = ['1.png', '2.jpeg', '3.png', '4.jpeg'];
+  products: any
 
-  constructor() { }
+  constructor( private productService: ProductService) { }
 
   ngOnInit(): void {
-  }
 
+    const productsObservable = this.productService.getProducts()
+    productsObservable.subscribe(
+      (data) => {
+        this.products = data
+      },
+      (err) => {console.error('something wrong occurred: ' + err)}
+    )
+  }
 }

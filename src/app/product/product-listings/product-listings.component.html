@@ -4,7 +4,7 @@
   <br>
   <div class="row">
     <div *ngFor="let product of products; index as productId" class="col-sm">
-      <a [title]="product.name + ' details'" [routerLink]="[productId]">
+      <a [title]="product.name + ' details'" [routerLink]="[ product._id]">
         <div class="card">
           <img src="./assets/img/{{product.image}}" class="card-img-top" alt="...">
           <div class="card-body">
