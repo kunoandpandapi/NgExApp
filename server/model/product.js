@@ -5,6 +5,7 @@ const ProductsSchema = new Schema({
   image: String,
   name: { type: String, required: true, max:[60, '最大60文字まで']},
   price: Number,
+  description: String,
   heading1: String,
   heading2: String,
   heading3: String,
